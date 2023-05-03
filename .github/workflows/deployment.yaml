@@ -18,14 +18,6 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install dependencies and build
-        run: |
-          cd cf-dashboard
-          npm ci
-          npm run build
-          mkdir -p ../docs
-          cp -r build/* ../docs/
-
       - name: Commit and push changes
         run: |
           cd docs
