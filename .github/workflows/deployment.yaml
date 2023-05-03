@@ -23,8 +23,11 @@ jobs:
           cd cf-dashboard
           npm ci
           npm run build
-          mkdir -p ../docs
-          cp -r build/* ../docs/
+
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: build
+
   deploy:
     name: Deploy to GitHub Pages
     needs: build
