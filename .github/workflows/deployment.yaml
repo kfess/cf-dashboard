@@ -23,6 +23,7 @@ jobs:
           cd cf-dashboard
           npm ci
           npm run build
+          mkdir -p ../docs
           cp -r build/* ../docs/
 
       - name: Commit and push changes
